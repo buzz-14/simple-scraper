@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuzZ Price Comparison</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}"/>
+    
+</head>
+<body bgcolor="orange">
+    <style>
+        body {background-color: #F0D9E7;}
+    </style>
+    
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                Price Compare -Z
+            </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="{% static 'img/3.jpg'%}">
+        <form class="d-flex tm-search-form" action="result">
+            <input class="form-control tm-search-input" type="search" placeholder="Search" aria-label="Search" name= "query">
+            <button class="btn btn-outline-success tm-search-btn" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+    </div>
+ <!-- container-fluid, tm-container-content -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+    </script>
+</body>
+</html>
