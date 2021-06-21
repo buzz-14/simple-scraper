@@ -183,8 +183,8 @@ a:hover { color:#009999; }
 
 .navbar-toggler:focus { box-shadow: none; }
 .navbar-brand {
-    color: #3399CC;
-    font-size: 1.6rem;
+    color: #293B5F;
+    font-size: 1.9rem;
 }
 
 .navbar-brand i { font-size: 2rem; }
@@ -198,7 +198,7 @@ a:hover { color:#009999; }
 .tm-mb-50 { margin-bottom: 50px; }
 .tm-mb-74 { margin-bottom: 74px; }
 .tm-mb-90 { margin-bottom: 90px; }
-.tm-text-primary { color: #009999; }
+.tm-text-primary { color: #47597E; }
 .tm-text-secondary { color: #CC6699; }
 a.tm-text-primary:hover { color:#666666; }
 .tm-bg-gray { background-color: #EEEEEE; }
@@ -262,8 +262,8 @@ a.tm-text-primary:hover { color:#666666; }
 }
 
 .tm-search-btn {
-    color: white;
-    background-color: #009999;
+    color: #810000;
+    background-color: #FFC2B4;
     border: none;
     width: 100px;
     height: 50px;
@@ -271,8 +271,8 @@ a.tm-text-primary:hover { color:#666666; }
 }
 
 p, .tm-text-gray { color: #999; }
-.tm-text-gray-light { color: #CCC; }
-.tm-text-gray-dark { color: #666; }
+.tm-text-gray-light { color: #293B5F; }
+.tm-text-gray-dark { color: #810000; }
 
 .tm-video-item {
     position: relative;
@@ -566,11 +566,11 @@ select:not([multiple]) {
 .form-control,
 input:-internal-autofill-selected,
 select:not([multiple]) {
-    color: #009999 !important;
+    color: #810000 !important;
 }
 
 .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color:  #009999;
+    color:  #810000;
     opacity: 1; /* Firefox */
 }
 
