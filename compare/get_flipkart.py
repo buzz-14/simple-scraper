@@ -37,6 +37,8 @@ def scrape_flipkart(str_input):
         for i in range(len(clean_input)):
             if clean_input[i] not in name.lower().replace(" ",""):
                 present_flag = False
+        if "case" in name.lower().replace(" ","") or "cover" in name.lower().replace(" ","") or "glass" in name.lower().replace(" ","") or "tempered" in name.lower().replace(" ",""):
+            present_flag = False   
         if present_flag == True:
             product_list.append([int(price),name,link])
     sorted_product_list =sorted(product_list,key=lambda x: (x[0]))
