@@ -16,18 +16,32 @@ def scrape_flipkart(str_input):
     mod_URL= URL+str_input.replace(" ","%20")
     html_data= requests.get(mod_URL,headers=header).content
     soup=BeautifulSoup(html_data,'lxml')
-    search_results = soup.find_all('a',{'class':'_1fQZEK'})
-
+    if soup.find('a',{'class':'_1fQZEK'}) is not None:
+        flag_type2 = False
+        search_results = soup.find_all('a',{'class':'_1fQZEK'})
+    else:
+        flag_type2 = True
+        search_results = soup.find_all('div',{'class':'_4ddWXP'})
     for item in search_results:
-        link= SITE + item['href']
-        name = item.find('div',{'class':'_4rR01T'}).text.strip()
-        price = item.find('div',{'class':'_30jeq3 _1_WHN1'}).text.strip().replace("," , "").replace("₹",'')
-        if(str_input.replace(" ","").lower() in name.replace(" ", "").lower() and "case" not in name.replace(" ", "").lower() and "cover" not in name.replace(" ", "").lower() and "glass" not in name.replace(" ", "").lower()):
+        if item is not None :
+            if flag_type2 == False :
+                link= SITE + item['href']
+                name = item.find('div',{'class':'_4rR01T'}).text.strip()
+                price = item.find('div',{'class':'_30jeq3 _1_WHN1'}).text.strip().replace("," , "").replace("₹",'')
+            else:
+                link= SITE +item.find('a',{'class':'s1Q9rs'})['href']
+                name = item.find('a',{'class':'s1Q9rs'}).text.strip()
+                price = item.find('div',{'class':'_30jeq3'}).text.strip().replace("," , "").replace("₹",'')
+        clean_input = str_input.lower().split()
+        present_flag = True
+        for i in range(len(clean_input)):
+            if clean_input[i] not in name.lower().replace(" ",""):
+                present_flag = False
+        if present_flag == True:
             product_list.append([int(price),name,link])
-
     sorted_product_list =sorted(product_list,key=lambda x: (x[0]))
+    product_list.clear()
     return sorted_product_list
-
 
 
 
